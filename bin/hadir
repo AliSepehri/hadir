@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+
+require 'hadir'
+puts Hadir.hi(ARGV[0])
