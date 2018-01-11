@@ -1,3 +1,5 @@
+require 'active_support/inflector'
+
 module Hadir
   module ControllerExtension
     def authorize?(record, query = nil)
