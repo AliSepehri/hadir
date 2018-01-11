@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name               = "hadir"
-  s.version            = "0.0.0"
+  s.version            = "0.1.0"
   s.default_executable = "hadir"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
