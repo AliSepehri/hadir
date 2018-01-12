@@ -2,7 +2,7 @@ require 'active_support/inflector'
 
 module Hadir
   module ControllerExtension
-    def authorize?(record, query = nil)
+    def authorize(record, query = nil)
       controller_namespace = params[:controller].split('/').inject('') { |a, e| a + '::' + e.classify }
 
       klass = "#{controller_namespace}Policy".constantize
