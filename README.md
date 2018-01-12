@@ -1,5 +1,7 @@
 # hadir
 
+[![Build Status](https://travis-ci.org/AliSepehri/hadir.svg?branch=master)](https://travis-ci.org/AliSepehri/hadir)
+
 Hadir provides an authorization system like [Pundit](https://github.com/varvet/pundit). With Hadir you separate policy logics and put them in policy classes based on each controller.
 
 ## Installation
