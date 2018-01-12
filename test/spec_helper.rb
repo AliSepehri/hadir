@@ -17,11 +17,11 @@ class PostController < ::ActionController::Base
   end
 
   def accessible
-    authorize? nil
+    authorize nil
   end
 
   def inaccessible
-    authorize? nil
+    authorize nil
   end
 end
 
