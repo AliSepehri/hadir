@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name               = "hadir"
-  s.version            = "0.3.0"
+  s.version            = "0.3.1"
   s.default_executable = "hadir"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.date = %q{2017-07-08}
   s.description = %q{Authorization mechanism}
   s.email = %q{ali.sepehri.kh@gmail.com}
-  s.files = ["Rakefile", "lib/hadir.rb", "bin/hadir"]
+  s.files = ["Rakefile", "lib/hadir.rb"]
   s.test_files = ["test/test_hadir.rb"]
   s.homepage = %q{http://rubygems.org/gems/hadir}
   s.require_paths = ["lib"]
