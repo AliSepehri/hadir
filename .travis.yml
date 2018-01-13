@@ -3,3 +3,14 @@ sudo: false
 rvm:
   - 2.2
 script: bundle exec rake test
+
+jobs:
+  include:
+    - stage: gem release
+      rvm: 2.2
+      script: echo "Deploying to rubygems.org ..."
+      deploy:
+        provider: rubygems
+        gem: hadir
+        api_key: $RUBYGEMS_API_KEY
+        on: master
