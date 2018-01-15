@@ -23,6 +23,10 @@ class PostController < ::ActionController::Base
   def inaccessible
     authorize nil
   end
+
+  def custom_method
+    authorize nil, 'accessible?'
+  end
 end
 
 class PostPolicy

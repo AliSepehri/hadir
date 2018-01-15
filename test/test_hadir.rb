@@ -12,4 +12,9 @@ class HadirTest < Test::Unit::TestCase
       PostController.new(controller: 'post', action: 'inaccessible').inaccessible
     end
   end
+
+  def test_custom_method
+    result = PostController.new(controller: 'post', action: 'custom_method').custom_method
+    assert_equal true, result
+  end
 end
