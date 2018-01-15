@@ -14,13 +14,18 @@ gem 'hadir'
 ## Getting Started
 Hadir is focused on policy classes. You need a policy class for each controller and a method into it for each action (It's possible to use same method for multiple actions).
 
-Assume you have following controller:
+In the following controller we prevent to update or delete unpublished post, also in delete action we use custom method and messsage:
 
 ``` ruby
 class Api::V1::PostsController < ActionController::Base
   def update
     post = Post.find(params[:id])
     authorize post
+  end
+
+  def delete
+    post = Post.find(params[:id])
+    authorize post, 'update?', message: 'You are not allowed to delete unpublished post.'
   end
 
   private
