@@ -2,7 +2,7 @@ require 'active_support/inflector'
 
 module Hadir
   module ControllerExtension
-    def authorize(record, query = nil)
+    def authorize(record, query = nil, message: nil)
       controller_namespace = params[:controller].split('/').inject('') { |a, e| a + '::' + e.classify }
 
       klass = "#{controller_namespace}Policy".constantize
@@ -10,7 +10,8 @@ module Hadir
       query ||= "#{params[:action]}?"
 
       unless policy.public_send(query)
-        error = NotAuthorizedError.new("not allowed to #{query} this #{record}")
+        message ||= "not allowed to #{query} this #{record}"
+        error = NotAuthorizedError.new(message)
 
         raise error
       end

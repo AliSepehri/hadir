@@ -27,6 +27,14 @@ class PostController < ::ActionController::Base
   def custom_method
     authorize nil, 'accessible?'
   end
+
+  def custom_message
+    authorize nil, message: 'You are not allowed to call inaccessible action.'
+  end
+
+  def custom_method_and_message
+    authorize nil, 'inaccessible?', message: 'You are not allowed to call inaccessible action.'
+  end
 end
 
 class PostPolicy
@@ -42,6 +50,10 @@ class PostPolicy
   end
 
   def inaccessible?
+    false
+  end
+
+  def custom_message?
     false
   end
 end
